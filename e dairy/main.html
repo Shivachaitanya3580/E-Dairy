@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Diary</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            
+         <h1>&emsp;&emsp;&emsp;E-Diary WebApp</h1>
+            <div class="ulist">    
+                <nav>
+                    <ul>
+                      <li>&emsp;&ensp;<a href="#bio-section">Bio & Personal Info</a>&emsp;&emsp;&emsp;</li>
+                      <li><a href="#diary-section">Diary</a>&emsp;&emsp;&emsp;</li>
+                      <li><a href="#todo-section">To-Do List</a>&emsp;&emsp;</li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Bio & Personal Information Section -->
+        <section id="bio-section">
+            <h2>Bio & Personal Information</h2>
+            <div class="profile img">
+                <img id="profile-pic" src="default-avatar.png.png" alt="Profile Picture">
+                <p style="font-family: 'Times New Roman', Times, serif;font-size: small;">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;Profile Picture</p>
+                <input type="file" id="upload-pic" accept="image/*">
+            </div>
+            <div class="personal-info">
+                <input type="text" id="name" placeholder="Full Name">
+                <textarea id="bio" placeholder="Biography"></textarea>
+                <input type="text" id="hobbies" placeholder="Hobbies">
+                <input type="text" id="contact" placeholder="Contact Information">
+                <button onclick="saveBio()">Save</button>
+            </div>
+        </section>
+
+        <!-- Diary Section -->
+        <section id="diary-section">
+            <h2>Diary</h2>
+            <div class="diary-entry">
+                <textarea id="diary-text" placeholder="Write your daily reflection here..."></textarea>
+                <input type="file" id="diary-attachment" accept="image/*, .pdf, .doc">
+                <input type="text" id="diary-tags" placeholder="Tags (e.g., work, personal)">
+                <button onclick="saveDiary()">Save Entry</button>
+            </div>
+        </section>
+
+        <!-- To-Do List Section -->
+        <section id="todo-section">
+            <h2>To-Do List</h2>
+            <div class="todo-item">
+                <input type="text" id="task-title" placeholder="Task Title">
+                <textarea id="task-desc" placeholder="Task Description"></textarea>
+                <input type="date" id="task-due">
+                <select id="task-priority">
+                    <option value="low">Low</option>
+                    <option value="medium">Medium</option>
+                    <option value="high">High</option>
+                </select>
+                <button onclick="addTask()">Add Task</button>
+            </div>
+            <ul id="todo-list"></ul>
+        </section>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
